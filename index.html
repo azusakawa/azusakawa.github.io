@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+    <style>
+        body { 
+            padding: 70px;
+            position:relative;
+            font-family: Roboto, sans-serif;
+        }
+    </style>
+    <head>
+        <meta charset="UTF-8">
+        <title>林誠的網頁</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>   <!--匯入jQuery-->
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"> <!--匯入bootstrap-->
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>  <!--匯入bootstrap javascript-->
+        <script src='https://cdn.jsdelivr.net/npm/apexcharts'></script> <!--匯入ApexCharts-->
+        <script src="./script.js"></script> <!--自定義JS函式庫-->
+    </head>
+    <body>
+        <nav class="nav navbar-default navbar-fixed-top">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#NavBar">
+                        <!--縮圖按鈕，使其看起來像三-->
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                    </button>
+                    <a href="http://www.fin.kuas.edu.tw/" target="_blank"><img alt="NKUST" src="./imgs/nkust_logo.png" class="navbar-brand"></a>
+                </div>
+                <div class="collapse navbar-collapse" id="NavBar">    <!--放入要縮放的內容-->
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a data-toggle="tab" href="#home">首頁</a></li>
+                        <li><a data-toggle="tab" href="#twse">股票</a></li>
+                        <li><a data-toggle="tab" href="#file">Page 2</a></li>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Dropdown<span class="caret"></span></a> <!--下拉式選單-->
+                            <ul class="dropdown-menu">
+                                <li><a href="#">First</a></li>
+                                <li><a href="#">Second</a></li>
+                                <li><a href="#">Third</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="https://www.google.com/" target="_blank"><span class="glyphicon glyphicon-search"></span></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>    
+        <div class="tab-content">
+            <div id="home" class="tab-pane fade in active">
+                <h3>HOME</h3>
+                <p>Some content.</p>
+            </div>
+            <div id="twse" class="tab-pane fade">
+                <div class='StockSearch'>
+                    <label for="EnterStockID">代碼: </label>
+                    <input type="text" id="EnterStockID">
+                    <button onclick="StockChart()" form="EnterStockID">確認</button><p></p>
+                    <span>最高價：</span><span id="price_H" style="color: red; font-size: 18px;"></span>
+                    <span>最低價：</span><span id="price_L" style="color: green; font-size: 18px;"></span>
+                    <span>開盤價：</span><span id="price_O" style="color: gray; font-size: 18px;"></span>
+                    <span>均價：</span><span id="price_A" style="font-size: 18px;"></span><p></p>
+                </div>
+                <form>
+                    <input type="radio" name="stocktype" value="all" checked>整股行情
+                    <input type="radio" name="stocktype" value="odd">零股行情
+                </form>
+                <table style="border: 3px gray solid; width: 410px; height: auto; font-size: 18px;" cellpadding="10" border="1">
+                    <tr style="text-align: center;">
+                        <td style="width: 100px;" id="sell_v1"></td>
+                        <td style="width: 80px; color: green;" id="sell_p1"></td>
+                        <td style="width: 80px; color: red;" id="buy_p1"></td>
+                        <td style="width: 100px;" id="buy_v1"></td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td id="sell_v2"></td>
+                        <td style="color: green;" id="sell_p2"></td>
+                        <td style="color: red;" id="buy_p2"></td>
+                        <td id="buy_v2"></td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td id="sell_v3"></td>
+                        <td style="color: green;" id="sell_p3"></td>
+                        <td style="color: red;" id="buy_p3"></td>
+                        <td id="buy_v3"></td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td id="sell_v4"></td>
+                        <td style="color: green;" id="sell_p4"></td>
+                        <td style="color: red;" id="buy_p4"></td>
+                        <td id="buy_v4"></td>
+                    </tr>
+                    <tr style="text-align: center;">
+                        <td id="sell_v5"></td>
+                        <td style="color: green;" id="sell_p5"></td>
+                        <td style="color: red;" id="buy_p5"></td>
+                        <td id="buy_v5"></td>
+                    </tr>
+                </table>
+                <div id="chart" style="max-width: 1280px; margin: 35px auto;"></div>
+            </div>
+            <div id="file" class="tab-pane fade">
+                <form id="form1">
+                    <input type="file" id="inputFile" onchange="GetInputFile(this)" style="display: none;" accept=".csv, .xls, .xlsx"/>
+                    <button type="button" onclick="inputFile.click()">上傳</button>
+                    <span id="ans"></span>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
