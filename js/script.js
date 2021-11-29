@@ -371,6 +371,28 @@ function Quotations() {
         })
 }
 
-function GetInputFile(f) {
-    document.getElementById('ans').innerHTML = f.value
+function GetInputFile(obj) {
+    if(!obj.files) {
+        return
+    }
+
+    var f = obj.files[0];
+    var reader = new FileReader();
+    reader.onload = function(e) {
+        var data = e.target.result;
+            
+        wb = XLSX.read(data, {
+            type: 'binary'
+        })
+        //wb.SheetNames[0]是獲取Sheets中第一個Sheet的名字
+        //wb.Sheets[Sheet名]獲取第一個Sheet的資料
+        aa=JSON.stringify( XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]) );
+        var u = eval('('+aa+')');  
+        document.getElementById("ans").innerHTML= JSON.stringify( XLSX.utils.sheet_to_json(wb.Sheets[wb.SheetNames[0]]) );
+        //獲取表格中為address的那列存入text中
+        for(var i=0;i<u.length;i++){
+            text.push(u[i].address);
+        }
+    }
+    document.getElementById('ans').innerHTML = obj.value
 }
