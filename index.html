@@ -34,7 +34,8 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li><a data-toggle="tab" href="#home">首頁</a></li>
                         <li><a data-toggle="tab" href="#twse">台灣股市</a></li>
-                        <li><a data-toggle="tab" href="#file">財務工程</a></li>
+                        <li><a data-toggle="tab" href="#fema">財務工程</a></li>
+                        <li><a data-target="tab" href="#fipt">金融投資程式交易</a></li>
                         <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">待處理<span class="caret"></span></a> <!--下拉式選單-->
                             <ul class="dropdown-menu">
                                 <li><a href="#">First</a></li>
@@ -53,8 +54,7 @@
         </nav>    
         <div class="tab-content">
             <div id="home" class="tab-pane fade in active">
-                <h3>HOME</h3>
-                <p>Some content.</p>
+                <h3>Comeing soon...</h3>
             </div>
             <div id="twse" class="tab-pane fade">
                 <div class='StockSearch'>
@@ -104,12 +104,15 @@
                 </table>
                 <div id="chart" style="max-width: 1280px; margin: 35px auto;"></div>
             </div>
-            <div id="file" class="tab-pane fade">
+            <div id="fema" class="tab-pane fade">
                 <form id="form1">
                     <input type="file" id="inputFile" onchange="GetInputFile(this)" style="display: none;" accept=".csv, .xls, .xlsx"/>
                     <button type="button" onclick="inputFile.click()">上傳</button>
                     <span id="ans"></span>
                 </form>
+            </div>
+            <div id="fipt" class="tab-pane fade">
+                <h3>Wait....</h3>
             </div>
         </div>
     </body>
