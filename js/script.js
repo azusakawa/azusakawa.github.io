@@ -6,7 +6,7 @@ var oddlot = '&oddLot=True'
 var quote = setInterval(Quotations, 1000)
 var chart = setInterval(Information, 1000)
 var pic = setInterval(StockChart, 60000)
-var load_img = setInterval(load_imag(), 1000)
+var load_img = setInterval(load_imag, 1000)
 
 function StockChart() {
     var apex = new ApexCharts(document.querySelector("#chart"), options);
@@ -378,5 +378,5 @@ function GetInputFile(f) {
 
 function load_imag() {
     new_src = "http://cctv9.kctmc.nat.gov.tw/play/jpg.php?devid={e588681d-9714-bb94-31db-aa17b7e6f3ce}&L=33806a101aa5543ed05e71b6f76648a8"
-    document.getElementById("live").src = new_src
+    document.getElementById("live").src = 'http://cctv9.kctmc.nat.gov.tw/play/jpg.php?devid={e588681d-9714-bb94-31db-aa17b7e6f3ce}&L=33806a101aa5543ed05e71b6f76648a8'
 }
