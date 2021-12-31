@@ -379,5 +379,5 @@ function GetInputFile(f) {
 function load_imag() {
     theDate = new Date();
     document.getElementById("live").src = 'https://cctv7.kctmc.nat.gov.tw/play/jpg.php?devid={1bd7d468-24dd-6094-2d34-598be51a7948}&L=dfe8885c1acbe4c5e5fb91e6d9bd3724&'+theDate.getTime()
-    setTimeout("load_imag()",1000);
+    setTimeout(load_imag(), 1000)
 }
