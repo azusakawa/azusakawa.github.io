@@ -6,6 +6,7 @@ var oddlot = '&oddLot=True'
 var quote = setInterval(Quotations, 1000)
 var chart = setInterval(Information, 1000)
 var pic = setInterval(StockChart, 60000)
+load_imag()
 
 function StockChart() {
     var apex = new ApexCharts(document.querySelector("#chart"), options);
@@ -386,6 +387,3 @@ function load_imag() {
         });
     setTimeout("load_imag()", 1000);
 }
-$(document).ready(function() {
-    load_imag();
-});
