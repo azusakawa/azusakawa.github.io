@@ -17,22 +17,6 @@
         <script src='https://cdn.jsdelivr.net/npm/apexcharts'></script> <!--匯入ApexCharts-->
         <script src="./js/xlsx.full.min.js"></script>   <!--匯入Sheetjs-->
         <script src="./js/script.js"></script>  <!--自定義JS函式庫-->
-        <script type = "text/javascript">
-            function load_imag() {
-                theDate = new Date();
-                $('<img />').attr('src', 'https://cctv7.kctmc.nat.gov.tw/play/jpg.php?devid={1bd7d468-24dd-6094-2d34-598be51a7948}&L=dfe8885c1acbe4c5e5fb91e6d9bd3724&' + theDate.getTime())
-                    .load(function() {
-                        $('#live').empty();
-                        $(this).width(340);
-                        $(this).height(260);
-                        $('#live').append($(this));
-                    });
-                setTimeout("load_imag()", 1000);
-            }
-            $(document).ready(function() {
-                load_imag();
-            }); 
-        </script>
     </head>
     <body>
         <nav class="nav navbar-default navbar-fixed-top">
@@ -70,7 +54,7 @@
             </div>
         </nav>    
         <div class="tab-content">
-            <div id="home" class="tab-pane fade">
+            <div id="home" class="tab-pane fade in active">
                 <h3>Comeing soon...</h3>
             </div>
             <div id="twse" class="tab-pane fade">
@@ -128,9 +112,9 @@
                     <span id="ans"></span>
                 </form>
             </div>
-            <div id="fibd" class="tab-pane fade in active">
-                <h3>5</h3>
-                <div id="live" style="text-align: center; width: 352px;"></div>
+            <div id="fibd" class="tab-pane fade">
+                <h3>6</h3>
+                <iframe src="http://traffic.kctmc.nat.gov.tw/CCTV/cctv_view_atis.jsp?cctv_id=C000227&amp;w=720&amp;h=480" frameborder="0" allowfullscreen></iframe>
             </div>
             <div id="fipt" class="tab-pane fade">
                 <h3>Wait....</h3>
