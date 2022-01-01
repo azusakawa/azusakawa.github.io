@@ -376,10 +376,11 @@ function GetInputFile(f) {
     document.getElementById('ans').innerHTML = f.value
 }
 
+var theDate = new Date()
 var road_img = new Image()
-road_img = "https://cctv2.kctmc.nat.gov.tw/e8ddc6a2/snapshot&1641049921374"
+road_img = 'https://cctv7.kctmc.nat.gov.tw/play/jpg.php?devid={1bd7d468-24dd-6094-2d34-598be51a7948}&L=dfe8885c1acbe4c5e5fb91e6d9bd3724&'+theDate.getTime()
 function load_imag() {
     document.getElementById("live").src = road_img
     road_img = new Image()
-    road_img =  "https://cctv2.kctmc.nat.gov.tw/e8ddc6a2/snapshot&1641049921374" 
+    road_img =  'https://cctv7.kctmc.nat.gov.tw/play/jpg.php?devid={1bd7d468-24dd-6094-2d34-598be51a7948}&L=dfe8885c1acbe4c5e5fb91e6d9bd3724&'+theDate.getTime() 
 }
