@@ -376,7 +376,7 @@ function GetInputFile(f) {
     document.getElementById('ans').innerHTML = f.value
 }
 
-thisDate = new Date()
+var thisDate = new Date()
 var road_img = new Image()
 road_img.src = "http://cctv9.kctmc.nat.gov.tw/play/jpg.php?devid={e588681d-9714-bb94-31db-aa17b7e6f3ce}&L=33806a101aa5543ed05e71b6f76648a8" + thisDate.getTime()
 function load_imag() {
