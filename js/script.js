@@ -378,9 +378,9 @@ function GetInputFile(f) {
 
 var theDate = new Date();
 var road_img = new Image()
-road_img = "https://cctv7.kctmc.nat.gov.tw/play/jpg.php?devid={269e04bf-45d1-d024-4581-44c2aa997dfb}&L=dfe8885c1acbe4c5e5fb91e6d9bd3724" //+ theDate.getTime()
+road_img = "https://cctv7.kctmc.nat.gov.tw/play/jpg.php?devid={269e04bf-45d1-d024-4581-44c2aa997dfb}&L=dfe8885c1acbe4c5e5fb91e6d9bd3724&" + new Date().getTime()
 function load_imag() {
     document.getElementById("live").src = road_img
     road_img = new Image()
-    road_img =  "https://cctv7.kctmc.nat.gov.tw/play/jpg.php?devid={269e04bf-45d1-d024-4581-44c2aa997dfb}&L=dfe8885c1acbe4c5e5fb91e6d9bd3724" //+ theDate.getTime()
+    road_img =  "https://cctv7.kctmc.nat.gov.tw/play/jpg.php?devid={269e04bf-45d1-d024-4581-44c2aa997dfb}&L=dfe8885c1acbe4c5e5fb91e6d9bd3724" 
 }
