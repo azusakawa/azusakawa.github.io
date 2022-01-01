@@ -377,7 +377,6 @@ function GetInputFile(f) {
 }
 
 function load_imag() {
-    theDate = new Date();
-    new_src = "http://cctv9.kctmc.nat.gov.tw/play/jpg.php?devid={e588681d-9714-bb94-31db-aa17b7e6f3ce}&L=33806a101aa5543ed05e71b6f76648a8" + theDate.getTime()
-    document.getElementById("live").setAttribute('src', new_src);
+    new_src = "http://cctv9.kctmc.nat.gov.tw/play/jpg.php?devid={e588681d-9714-bb94-31db-aa17b7e6f3ce}&L=33806a101aa5543ed05e71b6f76648a8" + new Date().getTime()
+    document.getElementById("live").src = new_src
 }
