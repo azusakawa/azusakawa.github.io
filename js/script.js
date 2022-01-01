@@ -376,7 +376,7 @@ function GetInputFile(f) {
     document.getElementById('ans').innerHTML = f.value
 }
 
-var road_img = new Image()
+var road_img = new Image() 
 road_img = "http://traffic.kctmc.nat.gov.tw/CCTV/cctv_view_atis.jsp?cctv_id=C000001&amp;w=340&amp;h=260"
 function load_imag() {
     document.getElementById("live").src = road_img
