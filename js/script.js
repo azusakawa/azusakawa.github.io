@@ -377,9 +377,9 @@ function GetInputFile(f) {
 }
 
 var road_img = new Image()
-road_img = "https://cctv6.kctmc.nat.gov.tw/759e1ca2/snapshot&t=1641049114122"
+road_img = "http://traffic.kctmc.nat.gov.tw/CCTV/cctv_view_atis.jsp?cctv_id=C000001&amp;w=340&amp;h=260"
 function load_imag() {
     document.getElementById("live").src = road_img
     road_img = new Image()
-    road_img =  "https://cctv6.kctmc.nat.gov.tw/759e1ca2/snapshot&t=1641049114122" 
+    road_img =  "http://traffic.kctmc.nat.gov.tw/CCTV/cctv_view_atis.jsp?cctv_id=C000001&amp;w=340&amp;h=260" 
 }
