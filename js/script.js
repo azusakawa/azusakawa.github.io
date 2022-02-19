@@ -407,8 +407,8 @@ function ProfitTrial() {
         })
         .then(function(result) {
             let res = result['data']['quote']['order']
-            let num = Number(document.getElementById('EnterBuyNum').value)
-            let price = Number(document.getElementById('EnterBuyPrice').value)
+            let num = document.getElementById('EnterBuyNum').value
+            let price = document.getElementById('EnterBuyPrice').value
             let new_num = num * 1000
             document.getElementById('test1').innerHTML = num
             document.getElementById('test2').innerHTML = price
