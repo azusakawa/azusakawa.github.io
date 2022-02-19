@@ -15,9 +15,9 @@ function TwoFloat(price, num) {
     if (isNaN(f)) {
         return
     }
-    new_price = Math.round(price * num - price * num * 0.001425)
-    document.getElementById('test1').innerHTML = new_price
-    document.getElementById('test2').innerHTML = num
+
+    document.getElementById('test1').innerHTML = price * num
+    document.getElementById('test2').innerHTML = price * num * 0.001425
 }
 
 function StockChart() {
