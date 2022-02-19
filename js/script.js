@@ -402,7 +402,7 @@ function ProfitTrial() {
             let price = document.getElementById('EnterBuyPrice').value
             let new_num = num * 1000
 
-            document.getElementById('TotalPay').innerHTML = ((price * new_num) + (Math.floor(price * new_num * 0.001425)))
+            document.getElementById('TotalPay').innerHTML = ((price * new_num) + (Math.ceil(price * new_num * 0.001425)))
 
             document.getElementById('sell_n1').innerHTML = res['bids'][0]['price']
             document.getElementById('sell_n2').innerHTML = res['bids'][1]['price']
@@ -416,16 +416,16 @@ function ProfitTrial() {
             document.getElementById('buy_n4').innerHTML = res['asks'][3]['price']
             document.getElementById('buy_n5').innerHTML = res['asks'][4]['price']
 
-            document.getElementById('sell_b1').innerHTML = (((res['bids'][0]['price'] * new_num) - (Math.floor(res['bids'][0]['price'] * new_num * 0.001425)) - (Math.floor(res['bids'][0]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.floor(price * new_num * 0.001425))))
-            document.getElementById('sell_b2').innerHTML = (((res['bids'][1]['price'] * new_num) - (Math.floor(res['bids'][1]['price'] * new_num * 0.001425)) - (Math.floor(res['bids'][1]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.floor(price * new_num * 0.001425))))
-            document.getElementById('sell_b3').innerHTML = (((res['bids'][2]['price'] * new_num) - (Math.floor(res['bids'][2]['price'] * new_num * 0.001425)) - (Math.floor(res['bids'][2]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.floor(price * new_num * 0.001425))))
-            document.getElementById('sell_b4').innerHTML = (((res['bids'][3]['price'] * new_num) - (Math.floor(res['bids'][3]['price'] * new_num * 0.001425)) - (Math.floor(res['bids'][3]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.floor(price * new_num * 0.001425))))
-            document.getElementById('sell_b5').innerHTML = (((res['bids'][4]['price'] * new_num) - (Math.floor(res['bids'][4]['price'] * new_num * 0.001425)) - (Math.floor(res['bids'][4]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.floor(price * new_num * 0.001425))))
+            document.getElementById('sell_b1').innerHTML = (((res['bids'][0]['price'] * new_num) - (Math.ceil(res['bids'][0]['price'] * new_num * 0.001425)) - (Math.ceil(res['bids'][0]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.ceil(price * new_num * 0.001425))))
+            document.getElementById('sell_b2').innerHTML = (((res['bids'][1]['price'] * new_num) - (Math.ceil(res['bids'][1]['price'] * new_num * 0.001425)) - (Math.ceil(res['bids'][1]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.ceil(price * new_num * 0.001425))))
+            document.getElementById('sell_b3').innerHTML = (((res['bids'][2]['price'] * new_num) - (Math.ceil(res['bids'][2]['price'] * new_num * 0.001425)) - (Math.ceil(res['bids'][2]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.ceil(price * new_num * 0.001425))))
+            document.getElementById('sell_b4').innerHTML = (((res['bids'][3]['price'] * new_num) - (Math.ceil(res['bids'][3]['price'] * new_num * 0.001425)) - (Math.ceil(res['bids'][3]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.ceil(price * new_num * 0.001425))))
+            document.getElementById('sell_b5').innerHTML = (((res['bids'][4]['price'] * new_num) - (Math.ceil(res['bids'][4]['price'] * new_num * 0.001425)) - (Math.ceil(res['bids'][4]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.ceil(price * new_num * 0.001425))))
             
-            document.getElementById('buy_b1').innerHTML = (((res['asks'][0]['price'] * new_num) - (Math.floor(res['asks'][0]['price'] * new_num * 0.001425)) - (Math.floor(res['asks'][0]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.floor(price * new_num * 0.001425))))
-            document.getElementById('buy_b2').innerHTML = (((res['asks'][1]['price'] * new_num) - (Math.floor(res['asks'][1]['price'] * new_num * 0.001425)) - (Math.floor(res['asks'][1]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.floor(price * new_num * 0.001425))))
-            document.getElementById('buy_b3').innerHTML = (((res['asks'][2]['price'] * new_num) - (Math.floor(res['asks'][2]['price'] * new_num * 0.001425)) - (Math.floor(res['asks'][2]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.floor(price * new_num * 0.001425))))
-            document.getElementById('buy_b4').innerHTML = (((res['asks'][3]['price'] * new_num) - (Math.floor(res['asks'][3]['price'] * new_num * 0.001425)) - (Math.floor(res['asks'][3]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.floor(price * new_num * 0.001425))))
-            document.getElementById('buy_b5').innerHTML = (((res['asks'][4]['price'] * new_num) - (Math.floor(res['asks'][4]['price'] * new_num * 0.001425)) - (Math.floor(res['asks'][4]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.floor(price * new_num * 0.001425))))
+            document.getElementById('buy_b1').innerHTML = (((res['asks'][0]['price'] * new_num) - (Math.ceil(res['asks'][0]['price'] * new_num * 0.001425)) - (Math.ceil(res['asks'][0]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.ceil(price * new_num * 0.001425))))
+            document.getElementById('buy_b2').innerHTML = (((res['asks'][1]['price'] * new_num) - (Math.ceil(res['asks'][1]['price'] * new_num * 0.001425)) - (Math.ceil(res['asks'][1]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.ceil(price * new_num * 0.001425))))
+            document.getElementById('buy_b3').innerHTML = (((res['asks'][2]['price'] * new_num) - (Math.ceil(res['asks'][2]['price'] * new_num * 0.001425)) - (Math.ceil(res['asks'][2]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.ceil(price * new_num * 0.001425))))
+            document.getElementById('buy_b4').innerHTML = (((res['asks'][3]['price'] * new_num) - (Math.ceil(res['asks'][3]['price'] * new_num * 0.001425)) - (Math.ceil(res['asks'][3]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.ceil(price * new_num * 0.001425))))
+            document.getElementById('buy_b5').innerHTML = (((res['asks'][4]['price'] * new_num) - (Math.ceil(res['asks'][4]['price'] * new_num * 0.001425)) - (Math.ceil(res['asks'][4]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.ceil(price * new_num * 0.001425))))
         })
 }
