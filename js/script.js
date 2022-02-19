@@ -15,7 +15,7 @@ function TwoFloat(price, num) {
     if (isNaN(f)) {
         return
     }
-    new_price = (price * num) - (price * num * 0.001425)
+    new_price = price * num - price * num * 0.001425
     f = Math.round(new_price)
     document.getElementById('test1').innerHTML = f
     document.getElementById('test2').innerHTML = num
