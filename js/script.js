@@ -21,7 +21,7 @@ function ChineseName() {
         })
         .then(function(result) {
             res_n = result['data']['meta']
-            document.getElementById('GetStockName').innerHTML =res_p['nameZhTw']
+            document.getElementById('GetStockName').innerHTML = res_p['nameZhTw']
         }) 
 }
 
