@@ -18,6 +18,7 @@ function TwoFloat(price, num) {
     new_price = price * num * 0.001425
     f = Math.round(new_price * 100) / 100
     document.getElementById('test1').innerHTML = f
+    document.getElementById('test2').innerHTML = num
 }
 
 function StockChart() {
