@@ -397,7 +397,6 @@ function ProfitTrial() {
             return response.json()
         })
         .then(function(result) {
-            let res_q = result['data']['quote']
             let res = result['data']['quote']['order']
 
             document.getElementById('sell_n1').innerHTML = res['bids'][0]['price']
