@@ -10,11 +10,6 @@ var chart = setInterval(Information, 1000)
 var profit = setInterval(ProfitTrial, 1000)
 // var pic = setInterval(StockChart, 60000)
 
-function TwoFloat(price, num) {
-    document.getElementById('test1').innerHTML = price * num
-    document.getElementById('test2').innerHTML = price * num * 0.001425
-}
-
 function StockChart() {
     var apex = new ApexCharts(document.querySelector("#chart"), options);
     apex.render()
@@ -406,9 +401,8 @@ function ProfitTrial() {
             let num = document.getElementById('EnterBuyNum').value
             let price = document.getElementById('EnterBuyPrice').value
             let new_num = num * 1000
-            //document.getElementById('test1').innerHTML = 
-            TwoFloat(res['bids'][0]['price'], new_num)
-            document.getElementById('test2').innerHTML = new_num
+            document.getElementById('test1').innerHTML = res['bids'][0]['price'] * new_num
+            document.getElementById('test2').innerHTML = res['bids'][0]['price'] * new_num * 0.001425
             document.getElementById('test3').innerHTML = price
 
             document.getElementById('sell_n1').innerHTML = res['bids'][0]['price']
