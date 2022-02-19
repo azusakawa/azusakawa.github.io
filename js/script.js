@@ -4,6 +4,7 @@ var quote_url = 'https://api.fugle.tw/realtime/v0.3/intraday/quote?symbolId='
 var meta_url = 'https://api.fugle.tw/realtime/v0.3/intraday/meta?symbolId='
 var oddlot = '&oddLot=True'
 
+var meta = setInterval(ChineseName, 1000)
 var quote = setInterval(Quotations, 1000)
 var chart = setInterval(Information, 1000)
 var pic = setInterval(StockChart, 60000)
