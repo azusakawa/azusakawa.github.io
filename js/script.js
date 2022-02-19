@@ -410,7 +410,7 @@ function ProfitTrial() {
             let num = document.getElementById('EnterBuyNum').value
             let price = document.getElementById('EnterBuyPrice').value
             let new_num = num * 1000
-            document.getElementById('test1').innerHTML = num
+            document.getElementById('test1').innerHTML = TwoFloat((res['bids'][0]['price'] * new_num * 0.001425))
             document.getElementById('test2').innerHTML = new_num
             document.getElementById('test3').innerHTML = price
 
