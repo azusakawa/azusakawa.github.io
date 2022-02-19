@@ -10,7 +10,7 @@ var chart = setInterval(Information, 1000)
 var profit = setInterval(ProfitTrial, 1000)
 // var pic = setInterval(StockChart, 60000)
 
-function TwoFloat(unm) {
+function TwoFloat(num) {
     var f = parseFloat(num)
     if (isNaN(f)) {
         return
