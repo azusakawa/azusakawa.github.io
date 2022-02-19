@@ -7,6 +7,7 @@ var oddlot = '&oddLot=True'
 var meta = setInterval(ChineseName, 1000)
 var quote = setInterval(Quotations, 1000)
 var chart = setInterval(Information, 1000)
+var profit = setInterval(ProfitTrial, 1000)
 // var pic = setInterval(StockChart, 60000)
 
 function StockChart() {
