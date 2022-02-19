@@ -410,6 +410,9 @@ function ProfitTrial() {
             let num = Number(document.getElementById('EnterBuyNum').value)
             let price = Number(document.getElementById('EnterBuyPrice').value)
             let new_num = num * 1000
+            document.getElementById('test1').innerHTML = num
+            document.getElementById('test2').innerHTML = price
+            document.getElementById('test3').innerHTML = new_num
 
             document.getElementById('sell_n1').innerHTML = res['bids'][0]['price']
             document.getElementById('sell_n2').innerHTML = res['bids'][1]['price']
