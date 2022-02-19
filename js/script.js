@@ -1,6 +1,7 @@
 var token = 'apiToken=4a18477a0b4e32a7edc9f0e48dd54315'
 var chart_url = 'https://api.fugle.tw/realtime/v0.3/intraday/chart?symbolId='
 var quote_url = 'https://api.fugle.tw/realtime/v0.3/intraday/quote?symbolId='
+var meta_url = 'https://api.fugle.tw/realtime/v0.3/intraday/meta?symbolId='
 var oddlot = '&oddLot=True'
 
 var quote = setInterval(Quotations, 1000)
@@ -10,6 +11,18 @@ var pic = setInterval(StockChart, 60000)
 function StockChart() {
     var apex = new ApexCharts(document.querySelector("#chart"), options);
     apex.render()
+}
+
+function ChineseName() {
+    url = meta_url + document.getElementById('EnterStockID').value + '&' + token
+    fetch(url)
+        .then(function(response) {
+            return response.json()
+        })
+        .then(function(result) {
+            res_n = result['data']['meta']
+            document.getElementById('GetStockName').innerHTML =res_p['nameZhTw']
+        }) 
 }
 
 function Information() {
