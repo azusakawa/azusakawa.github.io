@@ -407,8 +407,8 @@ function ProfitTrial() {
         })
         .then(function(result) {
             let res = result['data']['quote']['order']
-            let num = document.getElementById('EnterBuyNum').value
-            let price = document.getElementById('EnterBuyPrice').value
+            let num = Number(document.getElementById('EnterBuyNum').value)
+            let price = Number(document.getElementById('EnterBuyPrice').value)
             let new_num = num * 1000
 
             document.getElementById('sell_n1').innerHTML = res['bids'][0]['price']
@@ -423,7 +423,7 @@ function ProfitTrial() {
             document.getElementById('buy_n4').innerHTML = res['asks'][3]['price']
             document.getElementById('buy_n5').innerHTML = res['asks'][4]['price']
 
-            document.getElementById('sell_b1').innerHTML = (res['bids'][0]['price'] * new_num) - TwoFloat((res['bids'][0]['price'] * new_num * 0.001425)) - TwoFloat((res['bids'][0]['price'] * new_num * 0.0015)) - (price * new_num + TwoFloat((price * new_num * 0.001425)))
+            document.getElementById('sell_b1').innerHTML = (Number(res['bids'][0]['price']) * new_num) - TwoFloat((Number(res['bids'][0]['price']) * new_num * 0.001425)) - TwoFloat((Number(res['bids'][0]['price']) * new_num * 0.0015)) - (price * new_num + TwoFloat((price * new_num * 0.001425)))
             document.getElementById('sell_b2').innerHTML = res['bids'][1]['price']
             document.getElementById('sell_b3').innerHTML = res['bids'][2]['price']
             document.getElementById('sell_b4').innerHTML = res['bids'][3]['price']
