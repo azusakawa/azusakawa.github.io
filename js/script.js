@@ -401,9 +401,6 @@ function ProfitTrial() {
             let num = document.getElementById('EnterBuyNum').value
             let price = document.getElementById('EnterBuyPrice').value
             let new_num = num * 1000
-            document.getElementById('test1').innerHTML = (res['bids'][0]['price'] * new_num)
-            document.getElementById('test2').innerHTML = Math.round( 0.501425)
-            document.getElementById('test3').innerHTML = price
 
             document.getElementById('sell_n1').innerHTML = res['bids'][0]['price']
             document.getElementById('sell_n2').innerHTML = res['bids'][1]['price']
@@ -417,7 +414,7 @@ function ProfitTrial() {
             document.getElementById('buy_n4').innerHTML = res['asks'][3]['price']
             document.getElementById('buy_n5').innerHTML = res['asks'][4]['price']
 
-            document.getElementById('sell_b1').innerHTML = res['bids'][0]['price']
+            document.getElementById('sell_b1').innerHTML = (((res['bids'][0]['price'] * new_num) - Math.round(res['bids'][0]['price'] * new_num * 0.001425) - Math.round(res['bids'][0]['price'] * new_num * 0.0015)) - ((price * new_num) + Math.round(price * new_num * 0.001425)))
             document.getElementById('sell_b2').innerHTML = res['bids'][1]['price']
             document.getElementById('sell_b3').innerHTML = res['bids'][2]['price']
             document.getElementById('sell_b4').innerHTML = res['bids'][3]['price']
