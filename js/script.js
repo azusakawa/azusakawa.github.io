@@ -411,8 +411,8 @@ function ProfitTrial() {
             let price = document.getElementById('EnterBuyPrice').value
             let new_num = num * 1000
             document.getElementById('test1').innerHTML = (res['bids'][0]['price'] * new_num)
-            document.getElementById('test2').innerHTML = TwoFloat((res['bids'][0]['price'] * new_num * 0.001425))
-            document.getElementById('test3').innerHTML = price * new_num
+            document.getElementById('test2').innerHTML = TwoFloat(res['bids'][0]['price'] * new_num * 0.001425)
+            document.getElementById('test3').innerHTML = (price * new_num)
 
             document.getElementById('sell_n1').innerHTML = res['bids'][0]['price']
             document.getElementById('sell_n2').innerHTML = res['bids'][1]['price']
