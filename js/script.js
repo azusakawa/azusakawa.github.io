@@ -7,7 +7,7 @@ var oddlot = '&oddLot=True'
 var meta = setInterval(ChineseName, 1000)
 var quote = setInterval(Quotations, 1000)
 var chart = setInterval(Information, 1000)
-var pic = setInterval(StockChart, 60000)
+// var pic = setInterval(StockChart, 60000)
 
 function StockChart() {
     var apex = new ApexCharts(document.querySelector("#chart"), options);
@@ -22,7 +22,10 @@ function ChineseName() {
         })
         .then(function(result) {
             res_n = result['data']['meta']
-            document.getElementById('GetStockName').innerHTML = res_p['nameZhTw']
+
+            document.getElementById('test').innerHTML = url
+            document.getElementById('StockName').innerHTML = res_p['nameZhTw']
+            document.getElementById('StockType').innerHTML = res_p['industryZhTw']
         }) 
 }
 
