@@ -24,7 +24,6 @@ function ChineseName() {
         .then(function(result) {
             res_n = result['data']['meta']
 
-            document.getElementById('test').innerHTML = url
             document.getElementById('StockName').innerHTML = res_n['nameZhTw']
             document.getElementById('StockType').innerHTML = res_n['industryZhTw']
         }) 
