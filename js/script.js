@@ -402,12 +402,6 @@ function ProfitTrial() {
             let price = document.getElementById('EnterBuyPrice').value
             let new_num = num * 1000
 
-            document.getElementById('t1').innerHTML = (res['bids'][0]['price'] * new_num)
-            document.getElementById('t2').innerHTML = Math.round(res['bids'][0]['price'] * new_num * 0.001425)
-            document.getElementById('t3').innerHTML = Math.round(res['bids'][0]['price'] * new_num * 0.0015)
-            document.getElementById('t4').innerHTML = (price * new_num)
-            document.getElementById('t5').innerHTML = Math.round(price * new_num * 0.001425)
-
             document.getElementById('sell_n1').innerHTML = res['bids'][0]['price']
             document.getElementById('sell_n2').innerHTML = res['bids'][1]['price']
             document.getElementById('sell_n3').innerHTML = res['bids'][2]['price']
@@ -420,16 +414,16 @@ function ProfitTrial() {
             document.getElementById('buy_n4').innerHTML = res['asks'][3]['price']
             document.getElementById('buy_n5').innerHTML = res['asks'][4]['price']
 
-            document.getElementById('sell_b1').innerHTML = res['bids'][0]['price']
-            document.getElementById('sell_b2').innerHTML = res['bids'][1]['price']
-            document.getElementById('sell_b3').innerHTML = res['bids'][2]['price']
-            document.getElementById('sell_b4').innerHTML = res['bids'][3]['price']
-            document.getElementById('sell_b5').innerHTML = res['bids'][4]['price']
+            document.getElementById('sell_b1').innerHTML = (((res['bids'][0]['price'] * new_num) - (Math.round(res['bids'][0]['price'] * new_num * 0.001425)) - (Math.round(res['bids'][0]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.round(price * new_num * 0.001425))))
+            document.getElementById('sell_b2').innerHTML = (((res['bids'][1]['price'] * new_num) - (Math.round(res['bids'][1]['price'] * new_num * 0.001425)) - (Math.round(res['bids'][1]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.round(price * new_num * 0.001425))))
+            document.getElementById('sell_b3').innerHTML = (((res['bids'][2]['price'] * new_num) - (Math.round(res['bids'][2]['price'] * new_num * 0.001425)) - (Math.round(res['bids'][2]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.round(price * new_num * 0.001425))))
+            document.getElementById('sell_b4').innerHTML = (((res['bids'][3]['price'] * new_num) - (Math.round(res['bids'][3]['price'] * new_num * 0.001425)) - (Math.round(res['bids'][3]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.round(price * new_num * 0.001425))))
+            document.getElementById('sell_b5').innerHTML = (((res['bids'][4]['price'] * new_num) - (Math.round(res['bids'][4]['price'] * new_num * 0.001425)) - (Math.round(res['bids'][4]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.round(price * new_num * 0.001425))))
             
-            document.getElementById('buy_b1').innerHTML = res['asks'][0]['price']
-            document.getElementById('buy_b2').innerHTML = res['asks'][1]['price']
-            document.getElementById('buy_b3').innerHTML = res['asks'][2]['price']
-            document.getElementById('buy_b4').innerHTML = res['asks'][3]['price']
-            document.getElementById('buy_b5').innerHTML = res['asks'][4]['price']   
+            document.getElementById('buy_b1').innerHTML = (((res['asks'][0]['price'] * new_num) - (Math.round(res['asks'][0]['price'] * new_num * 0.001425)) - (Math.round(res['asks'][0]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.round(price * new_num * 0.001425))))
+            document.getElementById('buy_b2').innerHTML = (((res['asks'][1]['price'] * new_num) - (Math.round(res['asks'][1]['price'] * new_num * 0.001425)) - (Math.round(res['asks'][1]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.round(price * new_num * 0.001425))))
+            document.getElementById('buy_b3').innerHTML = (((res['asks'][2]['price'] * new_num) - (Math.round(res['asks'][2]['price'] * new_num * 0.001425)) - (Math.round(res['asks'][2]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.round(price * new_num * 0.001425))))
+            document.getElementById('buy_b4').innerHTML = (((res['asks'][3]['price'] * new_num) - (Math.round(res['asks'][3]['price'] * new_num * 0.001425)) - (Math.round(res['asks'][3]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.round(price * new_num * 0.001425))))
+            document.getElementById('buy_b5').innerHTML = (((res['asks'][4]['price'] * new_num) - (Math.round(res['asks'][4]['price'] * new_num * 0.001425)) - (Math.round(res['asks'][4]['price'] * new_num * 0.0015))) - ((price * new_num) + (Math.round(price * new_num * 0.001425))))
         })
 }
