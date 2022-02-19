@@ -402,7 +402,7 @@ function ProfitTrial() {
             let price = document.getElementById('EnterBuyPrice').value
             let new_num = num * 1000
             document.getElementById('test1').innerHTML = (res['bids'][0]['price'] * new_num)
-            document.getElementById('test2').innerHTML = Math.round((res['bids'][0]['price'] * new_num * 0.001425))
+            document.getElementById('test2').innerHTML = Math.round( 0.501425)
             document.getElementById('test3').innerHTML = price
 
             document.getElementById('sell_n1').innerHTML = res['bids'][0]['price']
