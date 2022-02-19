@@ -16,6 +16,7 @@ function StockChart() {
 
 function ChineseName() {
     url = meta_url + document.getElementById('EnterStockID').value + '&' + token
+
     fetch(url)
         .then(function(response) {
             return response.json()
@@ -24,8 +25,8 @@ function ChineseName() {
             res_n = result['data']['meta']
 
             document.getElementById('test').innerHTML = url
-            document.getElementById('StockName').innerHTML = res_p['nameZhTw']
-            document.getElementById('StockType').innerHTML = res_p['industryZhTw']
+            document.getElementById('StockName').innerHTML = res_n['nameZhTw']
+            document.getElementById('StockType').innerHTML = res_n['industryZhTw']
         }) 
 }
 
