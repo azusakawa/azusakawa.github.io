@@ -17,7 +17,7 @@ function TwoFloat(price, num) {
     }
     new_price = price * num * 0.001425
     f = Math.round(new_price * 100) / 100
-    return f
+    document.getElementById('test1').innerHTML = f
 }
 
 function StockChart() {
@@ -411,7 +411,8 @@ function ProfitTrial() {
             let num = document.getElementById('EnterBuyNum').value
             let price = document.getElementById('EnterBuyPrice').value
             let new_num = num * 1000
-            document.getElementById('test1').innerHTML = TwoFloat(res['bids'][0]['price'], new_num)
+            //document.getElementById('test1').innerHTML = 
+            TwoFloat(res['bids'][0]['price'], new_num)
             document.getElementById('test2').innerHTML = new_num
             document.getElementById('test3').innerHTML = price
 
