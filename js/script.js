@@ -10,6 +10,15 @@ var chart = setInterval(Information, 1000)
 var profit = setInterval(ProfitTrial, 1000)
 // var pic = setInterval(StockChart, 60000)
 
+function TwoFloat(unm) {
+    var f = parseFloat(num)
+    if (isNaN(f)) {
+        return
+    }
+    f = Math.round(num * 100) / 100
+    return f
+}
+
 function StockChart() {
     var apex = new ApexCharts(document.querySelector("#chart"), options);
     apex.render()
@@ -398,16 +407,32 @@ function ProfitTrial() {
         })
         .then(function(result) {
             let res = result['data']['quote']['order']
+            let num = document.getElementById('EnterBuyNum').value
+            let price = document.getElementById('EnterBuyPrice').value
+            let new_num = num * 1000
 
             document.getElementById('sell_n1').innerHTML = res['bids'][0]['price']
             document.getElementById('sell_n2').innerHTML = res['bids'][1]['price']
             document.getElementById('sell_n3').innerHTML = res['bids'][2]['price']
             document.getElementById('sell_n4').innerHTML = res['bids'][3]['price']
             document.getElementById('sell_n5').innerHTML = res['bids'][4]['price']
+
             document.getElementById('buy_n1').innerHTML = res['asks'][0]['price']
             document.getElementById('buy_n2').innerHTML = res['asks'][1]['price']
             document.getElementById('buy_n3').innerHTML = res['asks'][2]['price']
             document.getElementById('buy_n4').innerHTML = res['asks'][3]['price']
             document.getElementById('buy_n5').innerHTML = res['asks'][4]['price']
+
+            document.getElementById('sell_b1').innerHTML = (res['bids'][0]['price'] * new_num) - TwoFloat((res['bids'][0]['price'] * new_num * 0.001425)) - TwoFloat((res['bids'][0]['price'] * new_num * 0.0015)) - (price * new_num + TwoFloat((price * new_num * 0.001425)))
+            document.getElementById('sell_b2').innerHTML = res['bids'][1]['price']
+            document.getElementById('sell_b3').innerHTML = res['bids'][2]['price']
+            document.getElementById('sell_b4').innerHTML = res['bids'][3]['price']
+            document.getElementById('sell_b5').innerHTML = res['bids'][4]['price']
+            
+            document.getElementById('buy_b1').innerHTML = res['asks'][0]['price']
+            document.getElementById('buy_b2').innerHTML = res['asks'][1]['price']
+            document.getElementById('buy_b3').innerHTML = res['asks'][2]['price']
+            document.getElementById('buy_b4').innerHTML = res['asks'][3]['price']
+            document.getElementById('buy_b5').innerHTML = res['asks'][4]['price']   
         })
 }
