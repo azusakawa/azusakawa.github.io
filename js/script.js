@@ -22,7 +22,7 @@ function ChineseName() {
             return response.json()
         })
         .then(function(result) {
-            res_n = result['data']['meta']
+            let res_n = result['data']['meta']
 
             document.getElementById('StockName').innerHTML = res_n['nameZhTw']
             document.getElementById('StockType').innerHTML = res_n['industryZhTw']
@@ -340,7 +340,7 @@ function Information() {
 }
 
 function Quotations() {
-    var stocktype = document.querySelector('input[name="stocktype"]:checked').value
+    let stocktype = document.querySelector('input[name="stocktype"]:checked').value
 
     if (stocktype == 'all') {
         url = quote_url + document.getElementById('EnterStockID').value + '&' + token
@@ -353,8 +353,8 @@ function Quotations() {
             return response.json()
         })
         .then(function(result) {
-            res_p = result['data']['quote']
-            res = result['data']['quote']['order']
+            let res_p = result['data']['quote']
+            let res = result['data']['quote']['order']
 
             document.getElementById('price_H').innerHTML = res_p['priceHigh']['price']
             document.getElementById('price_L').innerHTML = res_p['priceLow']['price']
@@ -385,5 +385,29 @@ function Quotations() {
             document.getElementById('sell_p5').innerHTML = res['bids'][4]['price']
             document.getElementById('buy_p5').innerHTML = res['asks'][4]['price']
             document.getElementById('buy_v5').innerHTML = res['asks'][4]['volume']
+        })
+}
+
+function ProfitTrial() {
+    url = quote_url + document.getElementById('EnterStockID').value + '&' + token
+
+    fetch(url)
+        .then(function(response) {
+            return response.json()
+        })
+        .then(function(result) {
+            let res_q = result['data']['quote']
+            let res = result['data']['quote']['order']
+
+            document.getElementById('sell_n1').innerHTML = res['bids'][0]['price']
+            document.getElementById('sell_n2').innerHTML = res['bids'][1]['price']
+            document.getElementById('sell_n3').innerHTML = res['bids'][2]['price']
+            document.getElementById('sell_n4').innerHTML = res['bids'][3]['price']
+            document.getElementById('sell_n5').innerHTML = res['bids'][4]['price']
+            document.getElementById('buy_n1').innerHTML = res['asks'][0]['price']
+            document.getElementById('buy_n2').innerHTML = res['asks'][1]['price']
+            document.getElementById('buy_n3').innerHTML = res['asks'][2]['price']
+            document.getElementById('buy_n4').innerHTML = res['asks'][3]['price']
+            document.getElementById('buy_n5').innerHTML = res['asks'][4]['price']
         })
 }
