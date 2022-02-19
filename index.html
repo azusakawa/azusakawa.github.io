@@ -33,17 +33,15 @@
                 <div class="collapse navbar-collapse" id="NavBar">    <!--放入要縮放的內容-->
                     <ul class="nav navbar-nav navbar-right">
                         <li><a data-toggle="tab" href="#home">首頁</a></li>
-                        <!-- <li><a data-toggle="tab" href="#twse">台灣股市</a></li> -->
-                        <!-- <li><a data-toggle="tab" href="#fema">財務工程</a></li> -->
+                        <li><a data-toggle="tab" href="#stpc">股票獲利計算</a></li> -->
                         <li><a data-toggle="tab" href="#fibd">金融大數據專題</a></li>
-                        <!-- <li><a data-toggle="tab" href="#fipt">金融投資程式交易</a></li> -->
-                        <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">待處理<span class="caret"></span></a>
+                        <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">待處理<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">First</a></li>
                                 <li><a href="#">Second</a></li>
                                 <li><a href="#">Third</a></li>
                             </ul>
-                        </li> -->
+                        </li>
                         <li>
                             <a href="https://www.google.com/" target="_blank">
                                 <span class="glyphicon glyphicon-search"></span>
@@ -54,10 +52,10 @@
             </div>
         </nav>    
         <div class="tab-content">
-            <div id="home" class="tab-pane fade">
+            <div id="home" class="tab-pane fade in active">
                 <h3>Comeing soon...</h3>
             </div>
-            <div id="twse" class="tab-pane fade">
+            <div id="stpc" class="tab-pane fade">
                 <div class='StockSearch'>
                     <label for="EnterStockID">代碼: </label>
                     <input type="text" id="EnterStockID">
@@ -105,14 +103,7 @@
                 </table>
                 <div id="chart" style="max-width: 1280px; margin: 35px auto;"></div>
             </div>
-            <div id="fema" class="tab-pane fade">
-                <form id="form1">
-                    <input type="file" id="inputFile" onchange="GetInputFile(this)" style="display: none;" accept=".csv, .xls, .xlsx"/>
-                    <button type="button" onclick="inputFile.click()">上傳</button>
-                    <span id="ans"></span>
-                </form>
-            </div>
-            <div id="fibd" class="tab-pane fade in active">
+            <div id="fibd" class="tab-pane fade">
                 <header>
                     <a>資料來源：</a><a href="https://traffic.tbkc.gov.tw" target="_blank">高雄市政府交通局</a>
                 </header>
@@ -253,9 +244,6 @@
                         <th><img width="320" height="240" src="https://cctv1.kctmc.nat.gov.tw/6680bd18/snapshot&t=1641101887889"></th>
                     </tr>
                 </table>
-            </div>
-            <div id="fipt" class="tab-pane fade">
-                <h3>Wait....</h3>
             </div>
         </div>
     </body>
