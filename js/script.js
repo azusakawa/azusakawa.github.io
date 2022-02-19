@@ -370,7 +370,3 @@ function Quotations() {
             document.getElementById('buy_v5').innerHTML = res['asks'][4]['volume']
         })
 }
-
-function GetInputFile(f) {
-    document.getElementById('ans').innerHTML = f.value
-}
