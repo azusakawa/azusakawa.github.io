@@ -11,11 +11,6 @@ var profit = setInterval(ProfitTrial, 1000)
 // var pic = setInterval(StockChart, 60000)
 
 function TwoFloat(price, num) {
-    var f = parseFloat(price)
-    if (isNaN(f)) {
-        return
-    }
-
     document.getElementById('test1').innerHTML = price * num
     document.getElementById('test2').innerHTML = price * num * 0.001425
 }
