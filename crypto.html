@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    </head>
+   <body>
+     <script>
+        var usd_list = "BTC/USD,ETH/USD,USDT/USD,BNB/USD,USDC/USD,XRP/USD,SOL/USD,ADA/USD,LUNA/USD,UST/USD,BUSD/USD,DOGE/USD,AVAX/USD,DOT/USD,WBTC/USD,SHIB/USD,TRX/USD,DAI/USD,NEAR/USD,MATIC/USD,LTC/USD,CRO/USD,LEO/USD,BCH/USD,UNI/USD,ALGO/USD,FTT/USD,LINK/USD,ATOM/USD,XLM/USD,XMR/USD,ETC/USD,APE/USD,VET/USD,ICP/USD,HBAR/USD,FIL/USD,EGLD/USD,SAND/USD,MANA/USD,XTZ/USD,CAKE/USD,THETA/USD,EOS/USD,AXS/USD,RUNE/USD,KLAY/USD,AAVE/USD,FTM/USD,ZEC/USD,WAVES/USD,KCS/USD,HNT/USD,GMT/USD,BTT/USD,FLOW/USD,GRT/USD,HT/USD,TUSD/USD,BSV/USD,CVX/USD,XEC/USD,MIOTA/USD,MKR/USD,NEO/USD,NEXO/USD,CR/USD,QNT/USD,CELO/USD,STX/USD,USDP/USD,USDN/USD,ZIL/USD,OKB/USD,CHZ/USD,KSM/USD,GALA/USD,DASH/USD,LRC/USD,ONE/USD,ENJ/USD,XDC/USD,MINA/USD,BAT/USD,LDO/USD,AMP/USD,DCR/USD,XEM/USD,HOT/USD,AR/USD,COMP/USD,PAXG/USD,KAVA/USD,ICX/USD,YFI/USD,1INCH/USD,TFUEL/USD,GNO/USD,KDA/USD,QTUM/USD"
+
+        const fs = require('fs');
+        const request = require("request");
+        const cheerio = require("cheerio");
+
+        const Crypto = () => {
+            request({
+                url: "https://fcsapi.com/api-v3/crypto/latest?symbol=" + usd_list + "&access_key=DyiBFnXPxvOk879imlf9A5",
+                method: "GET"
+            }, (error, res, body) => {
+                // 如果有錯誤訊息，或沒有 body(內容)，就 return
+                if (error || !body) {
+                    return;
+                }
+
+            fs.writeFile("crypto_list.json", body);        
+            });
+        };
+
+        setTimeout(Crypto(), 30000)
+      </script>
+  </body>
+</html>
